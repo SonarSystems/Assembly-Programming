@@ -5,21 +5,13 @@ section .data
     helloLen:  equ $-hello             ; Length of the 'Hello world!' string
 
 section .bss
-    var1: resb 100
+    var1: resb 4
 
 section .text
 	global _start
 
 _start:
-	mov eax,4            ; The system call for write (sys_write)
-	mov ebx,1            ; File descriptor 1 - standard output
-	mov ecx,var1        ; Put the offset of hello in ecx
-	mov edx,helloLen     ; helloLen is a constant, so we don't need to say
-	                     ;  mov edx,[helloLen] to get it's actual value
-	int 80h              ; Call the kernel
-
-
-    mov ebp, "hello"
+    mov ebp, "hi"
     mov [var1], ebp
     mov eax,4            ; The system call for write (sys_write)
 	mov ebx,1            ; File descriptor 1 - standard output

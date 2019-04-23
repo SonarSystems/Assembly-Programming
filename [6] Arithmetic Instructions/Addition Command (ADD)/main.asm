@@ -14,11 +14,8 @@ section .text
 _start:
     mov ebp, 1
     mov esp, 2
-    mov [var1], ebp
-    mov [var2], esp
-    mov ebp, [var1]
-    mov esp, [var2]
     add ebp, esp
+    
 	mov eax,4            ; The system call for write (sys_write)
 	mov ebx,1            ; File descriptor 1 - standard output
 	mov ecx,hello        ; Put the offset of hello in ecx

@@ -4,10 +4,6 @@ section .data
     hello:     db 'Hello world!',10    ; 'Hello world!' plus a linefeed character
     helloLen:  equ $-hello             ; Length of the 'Hello world!' string
 
-section .bss
-    var1: resb 4
-    var2: resb 4
-
 section .text
 	global _start
 

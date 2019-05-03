@@ -8,9 +8,9 @@ section .text
 	global _start
 
 _start:
-    mov eax, 4
+    mov eax, 6
     mov esp, 2
-    mul esp
+    div esp
     mov esp, eax
 
 	mov eax,4            ; The system call for write (sys_write)
